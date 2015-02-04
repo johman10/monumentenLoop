@@ -17,9 +17,13 @@ class QuestionsController < ApplicationController
       if @answer.save
         redirect_to location_questions_path(location_id: params[:location_id])
       else
+        @question = Question.new(question_params)
+        @question_answer = QuestionAnswer.new(answer_params)
         render 'new'
       end
     else
+      @question = Question.new(question_params)
+      @question_answer = QuestionAnswer.new(answer_params)
       render 'new'
     end
   end

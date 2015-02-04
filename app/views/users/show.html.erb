@@ -5,6 +5,10 @@
   <%= @user.email %>
 </div>
 
-<%# @locations.each do |location| %>
-
-<%# end %>
+<% @locations.each do |location| %>
+  <%= link_to(location_path(id: location.id)) do %>
+    <div class="location_name">
+      <%= location.name %>
+    </div>
+  <% end %>
+<% end %>

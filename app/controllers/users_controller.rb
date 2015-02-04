@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @locations = Location.where()
+    @locations = Location.all
   end
 
   private
