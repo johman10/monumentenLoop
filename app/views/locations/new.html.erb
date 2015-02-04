@@ -1,0 +1,11 @@
+<%= form_for(@location) do |f| %>
+  <div class="form_label">
+    <%= f.label :json_file %>
+  </div>
+  <div class="form_field">
+    <%= f.file_field :json_file %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
