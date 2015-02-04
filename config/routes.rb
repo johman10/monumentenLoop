@@ -6,7 +6,13 @@ Rails.application.routes.draw do
   root 'users#new'
 
   resources :users
-  resources :locations
+  resources :locations do
+    resources :questions
+  end
+
+  # get '/locations/:location_id/questions/', to: 'questions#index', as: :questions
+  # get '/locations/:location_id/questions/new', to: 'questions#new', as: :new_question
+  # get '/locations/:location_id/questions/:id', to: 'questions#show', as: :question
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

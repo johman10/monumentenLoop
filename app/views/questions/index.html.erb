@@ -1,0 +1,12 @@
+<% if @questions.length > 0 %>
+  <% @questions.each do |question| %>
+    <div class="question">
+      <%= question.question %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="question">
+    Er zijn geen vragen voor deze locatie op dit moment. Creeer nieuwe met de knop hieronder.
+  </div>
+<% end %>
+<%= link_to 'Vraag maken', new_location_question_path(params[:location_id]) %>

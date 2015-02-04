@@ -13,3 +13,6 @@
 <div class="location_city">
   <%= @location.city %>
 </div>
+<div class="location_question_button">
+  <%= link_to 'Vragen', location_questions_path(location_id: @location.id) %>
+</div>

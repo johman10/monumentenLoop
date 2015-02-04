@@ -1,0 +1,21 @@
+<%= form_for @question, url: location_questions_path do |f| %>
+  <div class="form_label">
+    <%= f.label :question %>
+  </div>
+  <div class="form_field">
+    <%= f.text_field :question %>
+  </div>
+
+  <%= fields_for @question_answer do |a| %>
+    <div class="form_label">
+      <%= a.label :answer %>
+    </div>
+    <div class="form_field">
+      <%= a.text_area :answer %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
